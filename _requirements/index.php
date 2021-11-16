@@ -1,3 +1,8 @@
+<?php
+require_once '../BackEND/php/init.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,32 +30,41 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="completed.html">Completed</a>
+                        <a class="nav-link" href="completed.php">Completed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="settings.html">Settings</a>
+                        <a class="nav-link" href="settings.php">Settings</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="container">
+        <div class="container py-5">
+          
+            <?php crud();?>
+
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="input-group input-group-lg mt-5">
-                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-primary">Create Todo</button>
+                    
+                    <form action="" method = "GET">
+                        <div class="input-group input-group-lg mt-5">
+                            <input type="text" name = "taskinput" class="form-control" aria-label="Text input with segmented dropdown button">
+                            <div class="input-group-append" required>
+                                <button type="submit" class="btn btn-primary">Create Todo</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 mt-5">
+
+                    <?php viewTable();?>
+                        
                     <!-- Tasks section-->
-                    <section>
+                    <!-- <section>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 Buy groceries
@@ -102,7 +116,7 @@
                                 <button type="button" class="btn btn-light fa fa-check float-right"></button>
                             </li>
                         </ul>
-                    </section>
+                    </section> -->
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
